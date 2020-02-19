@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_02_19_193435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dog_walkings", force: :cascade do |t|
+    t.integer "status"
+    t.datetime "scheduled_date"
+    t.float "price"
+    t.integer "duration"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "pets"
+    t.time "begins"
+    t.time "ends"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
