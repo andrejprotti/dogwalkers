@@ -10,8 +10,6 @@ COPY Gemfile.lock /dogwalkers/Gemfile.lock
 RUN bundle install
 COPY . /dogwalkers
 
-
-
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]

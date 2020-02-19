@@ -1,26 +1,29 @@
-# README
+# Dogwalkers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application sets up a simple API with all basic CRUD operations to manage your DogWalking needs :tada:
+It uses docker, docker-compose and rails to achieve such a feat!
 
-Things you may want to cover:
+# Requirements
+ - A nice and recent Docker and docker-compose release on your machine.
 
-* Ruby version
+# Set up!
 
-* System dependencies
+Run these commands in order, please:
+ 
+	docker-compose build
 
-* Configuration
+	docker-compose run web rails webpacker:install
 
-Run:
+	docker-compose run web rake db:create
 
-## docker-compose run web rails webpacker:install
+# Running the app!
 
-* Database creation
+	docker-compose up --build
 
-* Database initialization
+# Running the test suite!
 
-* How to run the test suite
+	docker-compose run -e "RAILS_ENV=test" web rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+# Postman request collection
 
-* Deployment instructions
+	link placeholder
