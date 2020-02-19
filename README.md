@@ -3,10 +3,10 @@
 This application sets up a simple API with all basic CRUD operations to manage your DogWalking needs :tada:
 It uses docker, docker-compose and rails to achieve such a feat!
 
-# Requirements
+## Requirements
  - A nice and recent Docker and docker-compose release on your machine.
 
-# Set up!
+## Set up!
 
 Run these commands in order, please:
  
@@ -16,14 +16,14 @@ Run these commands in order, please:
 
 	docker-compose run web rake db:create
 
-# Running the app!
+## Running the app!
 
 	docker-compose up --build
 
-# Running the test suite!
+## Running the test suite!
 
 	docker-compose run -e "RAILS_ENV=test" web rspec
 
-# Postman request collection
+## Postman request collection
 
 	link placeholder
