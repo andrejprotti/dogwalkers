@@ -18,4 +18,4 @@ services:
     depends_on:
       - db
     environment:
-      - RUBYOPT='-W0 -W:no-deprecated -W:no-experimental'
+      - RUBYOPT=-W:no-deprecated -W:no-experimental
