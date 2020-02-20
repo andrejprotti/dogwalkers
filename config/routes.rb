@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'dog_walking/index'
-  get 'dog_walking/show'
-  get 'dog_walking/create'
-  get 'dog_walking/start_walk'
-  get 'dog_walking/finish_walk'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'dog_walkings/index'
+  get 'dog_walkings/show/:identifier', to: 'dog_walkings#show'
+  get 'dog_walkings/show'
+  post 'dog_walkings/create'
+  post 'dog_walkings/start_walk'
+  post 'dog_walkings/finish_walk'
+
+  root 'dog_walkings#index'
 end

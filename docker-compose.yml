@@ -19,3 +19,5 @@ services:
       - db
     environment:
       - RUBYOPT=-W:no-deprecated -W:no-experimental
+    stdin_open: true
+    tty: true
