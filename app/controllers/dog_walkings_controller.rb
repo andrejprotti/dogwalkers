@@ -2,6 +2,9 @@ class DogWalkingsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    dog_walkings = DogWalking.all
+
+    render json: dog_walkings.to_json
   end
 
   def show
@@ -31,13 +34,28 @@ class DogWalkingsController < ApplicationController
       ends: 0)
 
     dog_walking.save
-    head 200
+
+    render json: dog_walking.to_json
   end
 
   def start_walk
+    dog_walking = DogWalking.find(params[:identifier])
+
+    dog_walking.begins = params[:time]
+
+    dog_walking.save
+
+    render json: dog_walking.to_json
   end
 
   def finish_walk
+    dog_walking = DogWalking.find(params[:identifier])
+
+    dog_walking.ends = params[:time]
+
+    dog_walking.save
+
+    render json: dog_walking.to_json
   end
 
   private
