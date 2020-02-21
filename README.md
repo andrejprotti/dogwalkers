@@ -22,7 +22,7 @@ Run these commands in order, please:
 
 ## Running the test suite!
 
-	docker-compose run -e "RAILS_ENV=test" web rspec
+	docker-compose run web bundle exec rspec -c -fd -e "RAILS_ENV=test"
 
 ## Postman request collection
 
