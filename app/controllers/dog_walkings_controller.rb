@@ -26,7 +26,7 @@ class DogWalkingsController < ApplicationController
       pets: dog_walking.pets,
       begins: dog_walking.begins,
       ends: dog_walking.ends,
-      real_duration_seconds: dog_walking.ends - dog_walking.begins
+      real_duration_seconds: calculate_duration(dog_walking.begins, dog_walking.ends)
     }.to_json
   end
 
@@ -52,7 +52,7 @@ class DogWalkingsController < ApplicationController
 
     dog_walking.save
 
-    render json: dog_walking.to_json
+    render json: dog_walking.to_json and return
   end
 
   def start_walk
@@ -82,7 +82,15 @@ class DogWalkingsController < ApplicationController
     elsif duration == 60
       35 + (pets -1) * 20
     else
-      head :bad_request
+      raise ActionController::BadRequest.new(), "invalid duration! only 30 or 60 are currently accepted!"
     end
+  end
+
+  def calculate_duration(start, finish)
+    if start.nil? or finish.nil?
+      return 0
+    end
+
+    finish - start
   end
 end

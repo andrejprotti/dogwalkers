@@ -5,6 +5,8 @@ It uses docker, docker-compose and rails to achieve such a feat!
 
 ## Requirements
  - A nice and recent Docker and docker-compose release on your machine.
+ - https://docs.docker.com/install/
+ - https://docs.docker.com/compose/install/
 
 ## Set up!
 
@@ -16,6 +18,8 @@ Run these commands in order, please:
 
 	docker-compose run web rake db:create
 
+	docker-compose run web rake db:migrate
+
 ## Running the app!
 
 	docker-compose up --build
@@ -26,4 +30,9 @@ Run these commands in order, please:
 
 ## Postman request collection
 
-	link placeholder
+	https://documenter.getpostman.com/view/10475772/SzKTxKGB?version=latest
+
+## Known ToDo's:
+	- Use factorybot to clean up the tests!
+	- Add even more unit tests!
+	- Implement status attribute usage (0 for scheduled, 1 for 'in progress' and 2 for 'done')
