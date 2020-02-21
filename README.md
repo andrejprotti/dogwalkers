@@ -34,5 +34,6 @@ Run these commands in order, please:
 
 ## Known ToDo's:
 	- Use factorybot to clean up the tests!
+	- Transfer private methods from the controller to helper modules
 	- Add even more unit tests!
 	- Implement status attribute usage (0 for scheduled, 1 for 'in progress' and 2 for 'done')
