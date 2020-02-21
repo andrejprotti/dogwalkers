@@ -7,10 +7,27 @@ class DogWalkingsController < ApplicationController
     render json: dog_walkings.to_json
   end
 
+  def recent_index
+    dog_walkings = DogWalking.where("scheduled_date >= '#{DateTime.now}'")
+
+    render json: dog_walkings.to_json
+  end
+
   def show
     dog_walking = DogWalking.find(params[:identifier])
 
-    render json: dog_walking.to_json
+    render json: {
+      status: dog_walking.status,
+      scheduled_date: dog_walking.scheduled_date,
+      price: dog_walking.price,
+      duration: dog_walking.duration,
+      latitude: dog_walking.latitude,
+      longitude: dog_walking.longitude,
+      pets: dog_walking.pets,
+      begins: dog_walking.begins,
+      ends: dog_walking.ends,
+      real_duration_seconds: dog_walking.ends - dog_walking.begins
+    }.to_json
   end
 
   def create
