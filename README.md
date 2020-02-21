@@ -1,6 +1,6 @@
 # Dogwalkers
 
-This application sets up a simple API with all basic CRUD operations to manage your DogWalking needs :tada:
+This application sets up a simple API with all basic operations to manage your DogWalking needs :tada:
 It uses docker, docker-compose and rails to achieve such a feat!
 
 ## Requirements
