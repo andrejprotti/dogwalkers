@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_193435) do
     t.integer "duration"
     t.float "latitude"
     t.float "longitude"
-    t.string "pets"
+    t.integer "pets"
     t.time "begins"
     t.time "ends"
     t.datetime "created_at", precision: 6, null: false

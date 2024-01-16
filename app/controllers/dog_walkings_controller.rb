@@ -36,7 +36,7 @@ class DogWalkingsController < ApplicationController
     longitude = params[:longitude]
     duration = params[:duration]
     pets = params[:pets]
-    
+
     price = calculate_price(duration, pets)
 
     dog_walking = DogWalking.new(
