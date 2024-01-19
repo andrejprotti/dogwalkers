@@ -19,5 +19,6 @@ services:
       - db
     environment:
       - RUBYOPT=-W:no-deprecated -W:no-experimental
+      - RAILS_ENV=production
     stdin_open: true
     tty: true
